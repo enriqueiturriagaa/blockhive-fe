@@ -29,7 +29,7 @@ function Hero({ accounts, setAccounts }) {
           onClick={connectAccount}
           className="font-DDC border-2  border-[#C89731]  p-1 rounded "
         >
-          <div className=" py-2 px-4 bg-[#A77011]/30 rounded hover:bg-[#A77011]/50 ease-in duration-100">
+          <div className=" py-2 px-4 bg-[#A77011]/30 rounded-[1px] hover:bg-[#A77011]/50 ease-in duration-100">
             Connect Metamask
           </div>
         </button>

@@ -1,6 +1,7 @@
 ## TODOs
 
-- Add ethers/metamask and prop drill account to every needed component
-- BHV Balance Component
+- ~~Add ethers/metamask and prop drill account to every needed component~~
+- ~~BHV Balance Component~~
+- Fix: Replace Tenant Dashboard for Manager Dashboard
 - About Us Pop-Up or page
 - Loading Animation bee
