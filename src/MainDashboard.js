@@ -1,35 +1,35 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import ManagerOptions from "./ManagerOptions";
+import TenantOptions from "./TenantOptions";
 import InvestorOptions from "./InvestorOptions";
 import RegisterPropOptions from "./RegisterPropOptions";
 
 function MainDashboard({ accounts, setAccounts }) {
-  const [managerScreen, setManagerScreen] = useState(false); //CHECK IF THIS IS A LOGICAL PATTERN FOR REACT APPS
+  const [tenantScreen, setTenantScreen] = useState(false); //CHECK IF THIS IS A LOGICAL PATTERN FOR REACT APPS
   const [investorScreen, setInvestorScreen] = useState(false); //CHECK IF THIS IS A LOGICAL PATTERN FOR REACT APPS
   const [registerPropScreen, setRegisterProp] = useState(false); //CHECK IF THIS IS A LOGICAL PATTERN FOR REACT APPS
 
   //   Helper Functions
   //Nav Helpers
-  const managerActive = () => {
-    setManagerScreen(true);
+  const tenantActive = () => {
+    setTenantScreen(true);
     setInvestorScreen(false);
     setRegisterProp(false);
   };
   const investorActive = () => {
-    setManagerScreen(false);
+    setTenantScreen(false);
     setInvestorScreen(true);
     setRegisterProp(false);
   };
   const registerActive = () => {
-    setManagerScreen(false);
+    setTenantScreen(false);
     setInvestorScreen(false);
     setRegisterProp(true);
   };
 
   useEffect(() => {
     async function main() {
-      setManagerScreen(true);
+      setTenantScreen(true);
     }
     return () => {
       main();
@@ -42,8 +42,8 @@ function MainDashboard({ accounts, setAccounts }) {
       <div className="font-DDC flex justify-between items-center mb-6">
         <div>
           {/* Conditionally Show Title of dashboard */}
-          {managerScreen ? (
-            <h1 className="text-2xl text-[#C89731]">Manager Dashboard</h1>
+          {tenantScreen ? (
+            <h1 className="text-2xl text-[#C89731]">Tenant Dashboard</h1>
           ) : (
             ""
           )}
@@ -75,13 +75,13 @@ function MainDashboard({ accounts, setAccounts }) {
             ""
           )}
 
-          {!managerScreen ? (
+          {!tenantScreen ? (
             <button
-              onClick={managerActive}
+              onClick={tenantActive}
               className="font-DDC border-2 text-sm border-[#A77011]/30  p-1 rounded ml-4 "
             >
               <div className=" py-2 px-4 bg-[#A77011]/30 rounded-[1px] hover:bg-[#A77011]/50 ease-in duration-100">
-                Manager Dashboard
+                Tenant Dashboard
               </div>
             </button>
           ) : (
@@ -106,8 +106,8 @@ function MainDashboard({ accounts, setAccounts }) {
       <div className="flex">
         {/* Left Bottom - 2/3 -Action/Account Condition */}
         <div className="border-2 border-[#C89731] rounded p-6 w-2/3 mr-6">
-          {managerScreen ? (
-            <ManagerOptions accounts={accounts} setAccounts={setAccounts} />
+          {tenantScreen ? (
+            <TenantOptions accounts={accounts} setAccounts={setAccounts} />
           ) : (
             ""
           )}

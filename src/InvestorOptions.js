@@ -1,7 +1,7 @@
 import React from "react";
 
 function InvestorOptions({ accounts, setAccounts }) {
-  return <div>InvestorOptions</div>;
+  return <div className="border"> INVESTOR</div>;
 }
 
 export default InvestorOptions;
